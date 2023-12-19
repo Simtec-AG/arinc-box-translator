@@ -1,5 +1,5 @@
-# Swiss Air-Data C Decoder
-  
+# ARINX-429 to USB Converter Box Translator
+
 ## Overview
 
 This small C software decodes and encodes 32 bits long ARINC-429 data wordx that are received by or respectively transmitted to an ARINC-429-TO-USB converter box from Simtec AG <https://www.swiss-airdata.com/products/accessoires/arinc>.

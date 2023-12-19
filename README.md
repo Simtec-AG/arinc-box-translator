@@ -1,4 +1,4 @@
-# ARINX-429 to USB Converter Box Translator
+# ARINC-429 to USB Converter Box Translator
 
 ## Overview
 

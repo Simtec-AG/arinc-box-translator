@@ -1,6 +1,5 @@
 /*
 * © 2023 Simtec AG. All rights reserved.
-* Company Confidential
 */
 
 #include "serial.h"

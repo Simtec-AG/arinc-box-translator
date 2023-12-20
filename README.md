@@ -4,8 +4,11 @@
 
 This small C software decodes and encodes 32 bits long ARINC-429 data words that are received by or respectively transmitted to an ARINC-429-TO-USB converter box from Simtec AG <https://www.swiss-airdata.com/products/accessoires/arinc>.
 
+Picture of the ARINC-429-TO-USB converter box:
 ![frame_image](ARINC429-TO-USB-CONVERTER-BOX.jpg)
 
+Diagram of the integration of this arinc-box-translator:
+![frame_image](Diagram.png)
 
 It is composed of two executables: _arinc_rx.exe_ and _arinc_tx.exe_. 
 

@@ -10,10 +10,7 @@
 
 /** Start of header of a data packet */
 #define SOH_1 ((char)0x01u)
-#define SOH_2 ((char)0x02u)
-#define SOH_3 ((char)0x03u)
-#define SOH_5 ((char)0x05u)
-#define SOH_6 ((char)0x06u)
+#define ACK ((char)0x06u)
 
 /** Carriage return */
 #define CR ((char)0x0Du)
@@ -37,19 +34,19 @@ static uint32_t arinc_box_decode_data(uint8_t msg[])
     if (b6 != 0) {
         // Convert data bytes back to original ACK or CR value
         if ((b6 >> 7) & 1) {
-            msg[4] = (msg[4] == 0x00) ? SOH_6 : CR;
+            msg[4] = (msg[4] == 0x00) ? ACK : CR;
         }
 
         if ((b6 >> 6) & 1) {
-            msg[3] = (msg[3] == 0x00) ? SOH_6 : CR;
+            msg[3] = (msg[3] == 0x00) ? ACK : CR;
         }
 
         if ((b6 >> 5) & 1) {
-            msg[2] = (msg[2] == 0x00) ? SOH_6 : CR;
+            msg[2] = (msg[2] == 0x00) ? ACK : CR;
         }
 
         if ((b6 >> 4) & 1) {
-            msg[1] = (msg[1] == 0x00) ? SOH_6 : CR;
+            msg[1] = (msg[1] == 0x00) ? ACK : CR;
         }
     }
 
@@ -67,7 +64,7 @@ static uint32_t arinc_box_decode_data(uint8_t msg[])
  */
 static bool arinc_box_is_msg_empty(uint8_t msg[])
 {
-    const uint8_t EMPTY_MSG[7] = {SOH_6, 0x00, 0x00, 0x00, 0x80, 0x00, CR};
+    const uint8_t EMPTY_MSG[7] = {ACK, 0x00, 0x00, 0x00, 0x80, 0x00, CR};
     
     return (memcmp(msg, EMPTY_MSG, 7) == 0);
 }
@@ -106,7 +103,7 @@ arinc_box_msg_t arinc_box_decode(char raw_data)
     arinc_box_msg_t returned_message;
     returned_message.msg_type = ARINC_ERROR;
 
-    if ((raw_data == SOH_6))
+    if ((raw_data == ACK))
     {
         // A SOH marks the beginning of a message
         buffer[0] = (uint8_t)raw_data;

@@ -2,7 +2,7 @@
 
 ## Overview
 
-This small C software decodes and encodes 32 bits long ARINC-429 data wordx that are received by or respectively transmitted to an ARINC-429-TO-USB converter box from Simtec AG <https://www.swiss-airdata.com/products/accessoires/arinc>.
+This small C software decodes and encodes 32 bits long ARINC-429 data words that are received by or respectively transmitted to an ARINC-429-TO-USB converter box from Simtec AG <https://www.swiss-airdata.com/products/accessoires/arinc>.
 
 ![frame_image](ARINC429-TO-USB-CONVERTER-BOX.jpg)
 

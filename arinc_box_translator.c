@@ -108,7 +108,7 @@ arinc_box_msg_t arinc_box_decode(char raw_data)
 
     if ((raw_data == SOH_6))
     {
-        // A SOH marks the beggining of a message
+        // A SOH marks the beginning of a message
         buffer[0] = (uint8_t)raw_data;
         pos = 1;
         returned_message.msg_type = ARINC_PENDING;
